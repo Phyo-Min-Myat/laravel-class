@@ -27,9 +27,17 @@
 		    <input type="text" name="ingredients" class="form-control" value="{{ old('ingredients') }}" required >
 		  </div>
 
-		  <div class="form-group">
+		  <!-- <div class="form-group">
 		    <label for="exampleInputEmail1">Category</label>
 		    <input type="text" name="category" class="form-control" value="{{ old('category') }}" required>
+		  </div> -->
+
+		  <div class="form-group">
+		  	<select class="form-control" name="category">
+		  		@foreach($category as $value)
+		  			<option value="{{$value->id}}">{{ $value->name }}</option>
+		  		@endforeach
+		  	</select>
 		  </div>
 
 		  <button type="submit" class="btn btn-primary">Submit</button>

@@ -29,8 +29,14 @@
 		  </div>
 
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">Category</label>
-		    <input type="text" name="category" class="form-control" value="{{ $receipe->category}}" required>
+		   <!--  <label for="exampleInputEmail1">Category</label>
+		    <input type="text" name="category" class="form-control" value="{{ $receipe->category}}" required> -->
+		    <select class="form-control" name="category">
+		  		@foreach($category as $value)
+		  			<option value="{{$value->id}}" 
+		  				{{ $receipe->categories->id == $value->id ? "selected" : ""}}>{{ $value->name }}</option>
+		  		@endforeach
+		  	</select>
 		  </div>
 
 		  <button type="submit" class="btn btn-primary">Submit</button>

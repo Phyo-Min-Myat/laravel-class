@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Route::patch('receipe/{id}', 'ReceipeController@update'); 
 // Route::delete('receipe/{id}', 'ReceipeController@delete'); 
 
+// Route::resource('receipe', 'ReceipeController')->middleware('can:view,receipe');
 Route::resource('receipe', 'ReceipeController');
 
 // get all index page (GET) receipe
@@ -30,3 +31,7 @@ Route::resource('receipe', 'ReceipeController');
 // create receipe (POST) receipe
 // edit form (GET) receipe/1/
 // delete receipe (DELETE) receipe/1/
+
+Route::get('home', 'HomeController@index');
+
+Auth::routes();
